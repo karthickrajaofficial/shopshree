@@ -79,10 +79,6 @@ app.get('*', (req, res) => {
   res.sendFile(indexPath);
 });
 
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-});
 
 // Start server
 app.listen(port, () => {
