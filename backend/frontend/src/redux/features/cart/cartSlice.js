@@ -43,10 +43,10 @@ const cartSlice = createSlice({
     resetCart: (state) => (state = initialState),
     
     // New action for setting Razorpay payment method
-    setRazorpayPaymentMethod: (state) => {
-      state.paymentMethod = "Razorpay";
-      localStorage.setItem("cart", JSON.stringify(state));
-    },
+    // setRazorpayPaymentMethod: (state) => {
+    //   state.paymentMethod = "Razorpay";
+    //   localStorage.setItem("cart", JSON.stringify(state));
+    // },
     
   },
 });
@@ -58,7 +58,7 @@ export const {
   saveShippingAddress,
   clearCartItems,
   resetCart,
-  setRazorpayPaymentMethod, 
+  // setRazorpayPaymentMethod, 
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

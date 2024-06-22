@@ -68,13 +68,13 @@ export const orderApiSlice = apiSlice.injectEndpoints({
       query: () => `${ORDERS_URL}/total-sales-by-date`,
     }),
 
-    createRazorpayOrder: builder.mutation({
-      query: (order) => ({
-        url: RAZORPAY_URL, // Replace RAZORPAY_URL with actual URL for creating Razorpay orders
-        method: "POST",
-        body: order,
-      }),
-    }),
+    // createRazorpayOrder: builder.mutation({
+    //   query: (order) => ({
+    //     url: RAZORPAY_URL, // Replace RAZORPAY_URL with actual URL for creating Razorpay orders
+    //     method: "POST",
+    //     body: order,
+    //   }),
+    // }),
   }),
 });
 
@@ -85,7 +85,7 @@ export const {
   useCreateOrderMutation,
   useGetOrderDetailsQuery,
   usePayOrderMutation,
-  // useGetPaypalClientIdQuery,
+  useGetPaypalClientIdQuery,
   useGetMyOrdersQuery,
   useDeliverOrderMutation,
   useMarkOrderAsPaidMutation, // Ensure this line is present

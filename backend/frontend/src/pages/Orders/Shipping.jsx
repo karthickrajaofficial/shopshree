@@ -103,7 +103,7 @@ const Shipping = () => {
                 />
                 <span className="ml-2">Whatsapp</span>
               </label>
-              <label className="inline-flex items-center ml-4">
+              {/* <label className="inline-flex items-center ml-4">
                 <input
                   type="radio"
                   className="form-radio text-pink-500"
@@ -113,7 +113,7 @@ const Shipping = () => {
                   onChange={(e) => setPaymentMethod(e.target.value)}
                 />
                 <span className="ml-2">Razorpay</span>
-              </label>
+              </label> */}
             </div>
           </div>
           {/* Continue Button */}

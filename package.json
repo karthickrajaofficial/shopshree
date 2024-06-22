@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "backend": "nodemon backend/index.js",
-    "frontend": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run frontend \" \"npm run backend\"",
-    "prod": "node backend/index.js"
-  },
+ "scripts": {
+  "backend": "nodemon backend/index.js",
+  "frontend": "cd backend/frontend && npm run dev",
+  "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+  "prod": "node backend/index.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

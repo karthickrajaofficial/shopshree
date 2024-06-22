@@ -3,7 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import Razorpay from 'razorpay';
+// import Razorpay from 'razorpay';
 
 // Import routes and utility functions
 import connectDB from './config/db.js';
@@ -12,9 +12,12 @@ import categoryRoutes from './routes/categoryRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
-import paymentRoutes from './routes/paymentRoutes.js';
+// import paymentRoutes from './routes/paymentRoutes.js';
 
+// Load environment variables
 dotenv.config();
+
+
 const port = process.env.PORT || 5000; // Use PORT environment variable if set, otherwise default to 5000
 connectDB(); // Assuming this function connects to your MongoDB database
 const app = express();
@@ -33,10 +36,10 @@ app.use(cors({
 }));
 
 // Initialize Razorpay
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+// const razorpay = new Razorpay({
+//   key_id: process.env.RAZORPAY_KEY_ID,
+//   key_secret: process.env.RAZORPAY_KEY_SECRET,
+// });
 
 // Routes
 app.use('/api/users', userRoutes);
@@ -46,13 +49,13 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/orders', orderRoutes);
 
 // Route to fetch Razorpay key ID (optional)
-app.get('/api/config/razorpay-key-id', (req, res) => {
-  const razorpayKeyId = process.env.RAZORPAY_KEY_ID;
-  res.json({ razorpayKeyId });
-});
+// app.get('/api/config/razorpay-key-id', (req, res) => {
+//   const razorpayKeyId = process.env.RAZORPAY_KEY_ID;
+//   res.json({ razorpayKeyId });
+// });
 
 // Payment routes
-app.use('/api/payment', paymentRoutes);
+// app.use('/api/payment', paymentRoutes);
 
 // Serve uploaded files
 const __dirname = path.resolve();
