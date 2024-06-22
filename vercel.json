@@ -5,10 +5,14 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "source": "/(.*)",
+      "destination": "/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/backend/frontend/dist/index.html"
     }
   ]
 }
