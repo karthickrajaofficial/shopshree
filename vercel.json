@@ -5,12 +5,18 @@
       "use": "@vercel/node"
     }
   ],
-
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/index.js"
+      "destination": "/index.js"
     },
-    {"source": "/(.*)", "destination": "/"}
+    {
+      "source": "/uploads/(.*)",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/dist/index.html"
+    }
   ]
 }

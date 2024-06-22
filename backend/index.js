@@ -1,5 +1,3 @@
-// backend/server.js
-
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
@@ -20,7 +18,7 @@ dotenv.config();
 const port = process.env.PORT || 5000; // Use PORT environment variable if set, otherwise default to 5000
 connectDB(); // Assuming this function connects to your MongoDB database
 const app = express();
-const path = require('path')
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
